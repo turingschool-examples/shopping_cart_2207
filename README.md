@@ -1,3 +1,48 @@
+## Setup Instructions (for Instructors)
+
+* Clone this repo
+* remove the turingschool remote
+* remove the git history and initialize a new git repo
+* commit the Iteration 1 tests `##Instructions` from the README, for students.
+* create a branch called `spec`
+* commit the Gemfile, spec directory, and, optionally, the remainder of the README
+* Create a new repo on turingschool-examples called `restaurant_<cohort number>`
+* Add that remote
+* Push up both branches
+
+
+### Spec Harness Instructions
+
+You do not need the original repo locally for this process. This script will clone student repos down and will pull in the spec branch of the repo that they forked from. For this reason, it's important to ensure the spec branch was created properly and has the spec harness at the time the students fork the repo you created for this specific challenge.
+
+In order to run the spec harness, first create a new directory with a `students.txt` file
+
+In `students.txt`, put a list of your students Github handles.  For example:
+
+```
+aziobrow
+dionew1
+memcmahon
+s-espinosa
+```
+
+From the command line, run the following script, replacing `<repository_name` with the name of the challenge repo:
+
+```
+for i in `cat students.txt`; do
+  git clone git@github.com:$i/<repository_name> $i
+  cd $i
+  git pull origin spec # this will cause a merge commit message
+  rspec
+  echo
+  echo
+  read -p 'Press Enter to continue'
+  cd ..
+done
+```
+
+For each student, you will need to create or `:q` out of a merge commit message!
+
 ## Setup
 
 * Fork this Repository
