@@ -13,7 +13,7 @@
 
 ### Spec Harness Instructions
 
-You do not need the original repo locally for this process. This script will clone student repos down and will pull in the spec branch of the repo that they forked from. For this reason, it's important to ensure the spec branch was created properly and has the spec harness at the time the students fork the repo you created for this specific challenge.
+You do not need the original repo cloned down locally for this process. This script will clone student repos down and will pull in the spec branch of the repo that they forked from. For this reason, it's important to ensure the spec branch was created properly and has the spec harness at the time the students fork the repo you created for this specific challenge.
 
 In order to run the spec harness, first create a new directory with a `students.txt` file
 
@@ -26,7 +26,7 @@ memcmahon
 s-espinosa
 ```
 
-From the command line, run the following script, replacing `<repository_name` with the name of the challenge repo:
+From the root of the directory you created with the `students.txt` file at the root level, run the following script in your terminal, replacing `<repository_name` with the name of the challenge repo:
 
 ```
 for i in `cat students.txt`; do
