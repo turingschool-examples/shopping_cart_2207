@@ -69,6 +69,15 @@ pry(main)> product = Product.new(:paper, 'toilet paper', 3.70, '10')
 pry(main)> product.category
 #=> :paper
 
+pry(main)> product.category
+#=> 'toilet paper'
+
+pry(main)> product.unit_price
+#=> 3.70
+
+pry(main)> product.quantity
+#=> 10
+
 pry(main)> product.total_price
 #=> 37.0
 
