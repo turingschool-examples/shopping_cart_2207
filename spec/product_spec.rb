@@ -9,41 +9,31 @@ describe Product do
       expect(product).to be_an_Instance_of Product
     end
 
-    xit 'Product #category' do
-    # xit 'Product has a category' do
-    # Product has a category
+    xit 'Product has a category' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.category).to eq :paper
     end
 
-    xit 'Product #name' do
-    # xit 'Product has a name' do
-    # Product has a name
+    xit 'Product has a name' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.name).to eq 'toilet paper'
     end
 
-    xit 'Product #unit_price' do
-    # xit 'Product has a unit price' do
-    # Product has a unit price
+    xit 'Product has a unit price' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.unit_price).to eq 3.70
     end
 
-    xit 'Product #quantity' do
-    # xit 'Product has a quantity' do
-    # Product has a quantity
+    xit 'Product has a quantity' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.quantity).to eq 10
     end
 
-    xit 'Product #total_price' do
-    # xit 'Product can calculate total price' do
-    # Product can calculate total price
+    xit 'Product can calculate total price' do
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
 
