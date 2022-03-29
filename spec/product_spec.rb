@@ -6,7 +6,7 @@ describe Product do
     xit 'Product exists' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
-      expect(product).to be_an_Instance_of Product
+      expect(product).to be_an_instance_of Product
     end
 
     xit 'Product has a category' do
