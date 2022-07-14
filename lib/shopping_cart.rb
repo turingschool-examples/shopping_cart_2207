@@ -21,11 +21,7 @@ class ShoppingCart
   end
 
   def is_full?
-    if total_number_of_products >= @capacity
-      true
-    else
-      false
-    end     
+    total_number_of_products >= @capacity  
   end
 
   def products_by_category(category)
@@ -36,8 +32,7 @@ class ShoppingCart
 
   def percentage_occupied
     decimal = (total_number_of_products.to_f / @capacity)
-    output = sprintf('%.2f', (decimal * 100))
-    output.to_f
+    (sprintf('%.2f', decimal * 100)).to_f
   end
 
   def sorted_products_by_quantity
