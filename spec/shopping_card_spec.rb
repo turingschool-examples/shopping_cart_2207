@@ -79,7 +79,7 @@ RSpec.describe ShoppingCart do
         expect(@cart.sorted_products_by_quantity).to eq(expected)
     end
 
-    xit 'can break down cart by product category' do
+    it 'can break down cart by product category' do
         @cart.add_product(@product1)
         @cart.add_product(@product2)
         @cart.add_product(@product3) 

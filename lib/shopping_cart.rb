@@ -45,4 +45,7 @@ class ShoppingCart
         @products.sort_by{ |product| product.quantity }.reverse
     end
 
+    def product_breakdown
+        @products.group_by{ |product| product.category }
+    end
 end
