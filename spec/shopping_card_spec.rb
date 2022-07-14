@@ -69,7 +69,7 @@ RSpec.describe ShoppingCart do
         expect(@cart.percentage_occupied).to eq(43.33)
     end
 
-    xit 'can sort products by quantity' do
+    it 'can sort products by quantity' do
         @cart.add_product(@product1)
         @cart.add_product(@product2)
         @cart.add_product(@product3) 
