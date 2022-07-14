@@ -61,4 +61,36 @@ RSpec.describe ShoppingCart do
         expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
     end
 
+    it 'can give a percentage occupied' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3) 
+
+        expect(@cart.percentage_occuped).to eq(43.33)
+    end
+
+    it 'can sort products by quantity' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3) 
+        product4 = Product.new(:produce, 'apples', 0.99, '20')
+        @cart.add_product(product4)
+        expected = [product4, @product1, @product2, @product3]
+        expect(@cart.sorted_products_by_quantity).to eq(expected)
+    end
+
+    it 'can break down cart by product category' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3) 
+        product4 = Product.new(:produce, 'apples', 0.99, '20')
+        @cart.add_product(product4)
+        expected = {
+            meat: [@product2],
+            paper: [@product1, @product3],
+            produce: [product4]
+        }
+        expect(@cart.product_breakdown).to eq(expected)
+    end
+
 end
