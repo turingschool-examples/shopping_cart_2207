@@ -18,13 +18,13 @@ RSpec.describe ShoppingCart do
         expect(@cart.products).to eq([])
     end
 
-    xit 'can have products added' do
+    it 'can have products added' do
         @cart.add_product(@product1)
         @cart.add_product(@product2)
         expect(@cart.products).to eq([@product1, @product2])
     end
 
-    xit 'has details' do
+    it 'has details' do
         expected = { name: "King Soopers", capacity: 30}
         expect(@cart.details).to eq(expected)
     end
