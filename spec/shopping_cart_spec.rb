@@ -36,7 +36,7 @@ describe ShoppingCart do
     expect(cart.products).to eq([product1, product2])
   end
 
-  xit 'can report details' do
+  it 'can report details' do
     cart = ShoppingCart.new("King Soopers", "30items")
 
     expect(cart.details).to eq({name: "King Soopers", capacity: 30})
