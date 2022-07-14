@@ -116,7 +116,7 @@ describe ShoppingCart do
     expect(cart.sorted_product_by_quantity).to eq([product4, product1, product2, product3])
   end
 
-  xit 'can give a breakdown of products' do
+  it 'can give a breakdown of products' do
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')

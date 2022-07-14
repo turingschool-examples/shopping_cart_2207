@@ -44,4 +44,13 @@ class ShoppingCart
     end
     sorted_products.reverse
   end
+
+  def product_breakdown
+    product_hash = {}
+    product_array = []
+      @products.each do |product|
+        product_hash[product.category.to_sym] = product_array << product
+      end
+    product_hash
+  end
 end
