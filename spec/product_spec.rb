@@ -54,6 +54,7 @@ describe Product do
       expect(product.is_hoarded?).to eq(true)
     end
       
+    
 
 
   end
