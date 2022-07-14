@@ -1,4 +1,4 @@
-require './lib/shopping_cart'
+require './lib/shopping_cart.rb'
 
 describe ShoppingCart do
   it 'is an instance of ShoppingCart class' do
@@ -19,13 +19,13 @@ describe ShoppingCart do
     expect(cart.capacity).to eq(30)
   end
 
-  it 'lists its products as an array' do
+  xit 'lists its products as an array' do
     cart = ShoppingCart.new("King Soopers", "30items")
 
     expect(cart.products).to eq([])
   end
 
-  it 'can add products' do
+  xit 'can add products' do
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')
@@ -36,9 +36,9 @@ describe ShoppingCart do
     expect(cart.products).to eq([product1, product2])
   end
 
-  it 'can report details' do
+  xit 'can report details' do
     cart = ShoppingCart.new("King Soopers", "30items")
 
-    expect(cart.details).to eq({cart[:name] = "King Soopers", cart[:capacity] = 30})
+    expect(cart.details).to eq({name: "King Soopers", capacity: 30})
   end
 end
