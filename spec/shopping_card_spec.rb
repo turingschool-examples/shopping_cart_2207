@@ -35,7 +35,7 @@ RSpec.describe ShoppingCart do
         @cart.add_product(@product2)
         @cart.add_product(@product3)
 
-        expect(@card.total_number_of_products).to eq(13)
+        expect(@cart.total_number_of_products).to eq(13)
     end
 
     it 'is full once capacity is reached' do
@@ -58,7 +58,7 @@ RSpec.describe ShoppingCart do
         product4 = Product.new(:produce, 'apples', 0.99, '20')
         @cart.add_product(product4)
 
-        expect(@cart.products_by_category(:paper).to eq([@product1, @product3])
+        expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
     end
 
 end
