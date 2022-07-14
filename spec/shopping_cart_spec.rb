@@ -19,13 +19,13 @@ describe ShoppingCart do
     expect(cart.capacity).to eq(30)
   end
 
-  xit 'lists its products as an array' do
+  it 'lists its products as an array' do
     cart = ShoppingCart.new("King Soopers", "30items")
 
     expect(cart.products).to eq([])
   end
 
-  xit 'can add products' do
+  it 'can add products' do
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')
