@@ -2,10 +2,10 @@ require './lib/product'
 require './lib/shopping_cart'
 
 RSpec.describe ShoppingCart do
-  let(:cart) { described_class.new("King Soopers", "30items") }
+  let(:cart) { described_class.new('King Soopers', '30items') }
   let(:product1) { Product.new(:paper, 'toilet paper', 3.70, '10') }
   let(:product2) { Product.new(:meat, 'chicken', 4.50, '2') }
-  let(:product3) { Product.new(:paper, 'tissue paper', 1.25, '1')}
+  let(:product3) { Product.new(:paper, 'tissue paper', 1.25, '1') }
   let(:product4) { Product.new(:produce, 'apples', 0.99, '20') }
 
   it 'exists' do
@@ -13,7 +13,7 @@ RSpec.describe ShoppingCart do
   end
 
   it 'has a name' do
-    expect(cart.name).to eq("King Soopers")
+    expect(cart.name).to eq('King Soopers')
   end
 
   it 'has a capacity' do
@@ -32,7 +32,7 @@ RSpec.describe ShoppingCart do
   end
 
   it 'can display details' do
-    expect(cart.details).to eq({name: "King Soopers", capacity: 30})
+    expect(cart.details).to eq({ name: 'King Soopers', capacity: 30 })
   end
 
   it 'has a total number of products' do
@@ -50,7 +50,7 @@ RSpec.describe ShoppingCart do
     cart.add_product(product3)
     cart.add_product(product4)
 
-  expect(cart.is_full?).to eq(true)
+    expect(cart.is_full?).to eq(true)
   end
 
   it 'can display products by category' do
@@ -85,6 +85,6 @@ RSpec.describe ShoppingCart do
     cart.add_product(product3)
     cart.add_product(product4)
 
-    expect(cart.product_breakdown).to eq({meat: [product2], paper: [product1, product3], produce: [product4]})
+    expect(cart.product_breakdown).to eq({ meat: [product2], paper: [product1, product3], produce: [product4] })
   end
 end

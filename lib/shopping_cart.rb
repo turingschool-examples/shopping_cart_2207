@@ -1,5 +1,4 @@
 class ShoppingCart
-
   attr_reader :name,
               :capacity,
               :products,
@@ -9,7 +8,7 @@ class ShoppingCart
     @name = name
     @capacity = capacity.to_i
     @products = []
-    @details = {name: @name, capacity: @capacity}
+    @details = { name: @name, capacity: @capacity }
   end
 
   def add_product(product)
@@ -21,7 +20,7 @@ class ShoppingCart
   end
 
   def is_full?
-    total_number_of_products >= @capacity  
+    total_number_of_products >= @capacity
   end
 
   def products_by_category(category)
@@ -32,7 +31,7 @@ class ShoppingCart
 
   def percentage_occupied
     decimal = (total_number_of_products.to_f / @capacity)
-    (sprintf('%.2f', decimal * 100)).to_f
+    format('%.2f', decimal * 100).to_f
   end
 
   def sorted_products_by_quantity
