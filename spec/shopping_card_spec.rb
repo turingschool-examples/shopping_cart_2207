@@ -6,6 +6,7 @@ RSpec.describe ShoppingCart do
         @cart = ShoppingCart.new("King Soopers", "30items")
         @product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
         @product2 = Product.new(:meat, 'chicken', 4.50, '2')  
+        @product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
     end
 
     it 'exists' do
@@ -27,6 +28,37 @@ RSpec.describe ShoppingCart do
     it 'has details' do
         expected = { name: "King Soopers", capacity: 30}
         expect(@cart.details).to eq(expected)
+    end
+
+    it 'can count the total number of products' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3)
+
+        expect(@card.total_number_of_products).to eq(13)
+    end
+
+    it 'is full once capacity is reached' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3)
+
+        expect(@cart.is_full?).to be false
+
+        product4 = Product.new(:produce, 'apples', 0.99, '20')
+        @cart.add_product(product4)
+
+        expect(@cart.is_full?).to be true
+    end
+
+    it 'can return an array of products within a category' do
+        @cart.add_product(@product1)
+        @cart.add_product(@product2)
+        @cart.add_product(@product3)  
+        product4 = Product.new(:produce, 'apples', 0.99, '20')
+        @cart.add_product(product4)
+
+        expect(@cart.products_by_category(:paper).to eq([@product1, @product3])
     end
 
 end
