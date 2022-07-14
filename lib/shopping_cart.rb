@@ -37,4 +37,11 @@ class ShoppingCart
     percent.round(2)
   end
 
+  def sorted_product_by_quantity
+    sorted_products =
+    @products.sort_by do |product|
+      product.quantity
+    end
+    sorted_products.reverse
+  end
 end

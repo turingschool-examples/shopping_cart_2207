@@ -101,7 +101,7 @@ describe ShoppingCart do
     expect(cart.percentage_occupied).to eq(43.33)
   end
 
-  xit 'can sort products by quantity' do
+  it 'can sort products by quantity' do
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')
