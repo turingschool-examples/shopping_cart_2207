@@ -7,7 +7,10 @@ class ShoppingCart
 
     def initialize(name, capacity)
         @products = []
-        @details = { name: name, capacity: capacity[0..-6].to_i }
+        @details = { 
+            name: name, 
+            capacity: capacity[0..-6].to_i 
+        }
     end
 
     def name
@@ -32,6 +35,10 @@ class ShoppingCart
 
     def products_by_category(category)
         @products.find_all{ |product| product.category == category}
+    end
+
+    def percentage_occupied
+        (total_number_of_products.to_f / capacity * 100).round(2)
     end
 
 end

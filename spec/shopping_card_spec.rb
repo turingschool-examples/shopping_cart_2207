@@ -66,10 +66,10 @@ RSpec.describe ShoppingCart do
         @cart.add_product(@product2)
         @cart.add_product(@product3) 
 
-        expect(@cart.percentage_occuped).to eq(43.33)
+        expect(@cart.percentage_occupied).to eq(43.33)
     end
 
-    it 'can sort products by quantity' do
+    xit 'can sort products by quantity' do
         @cart.add_product(@product1)
         @cart.add_product(@product2)
         @cart.add_product(@product3) 
@@ -79,7 +79,7 @@ RSpec.describe ShoppingCart do
         expect(@cart.sorted_products_by_quantity).to eq(expected)
     end
 
-    it 'can break down cart by product category' do
+    xit 'can break down cart by product category' do
         @cart.add_product(@product1)
         @cart.add_product(@product2)
         @cart.add_product(@product3) 
