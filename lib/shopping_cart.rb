@@ -16,8 +16,6 @@ class ShoppingCart
   end
 
   def total_number_of_products
-    require "pry"
-
-    binding.pry
+    products.map { |product| product.quantity }.sum
   end
 end
