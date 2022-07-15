@@ -9,6 +9,7 @@ describe(Product) do
       @product1 = Product.new(:paper, "toilet paper", 3.70, "10")
       @product2 = Product.new(:meat, "chicken", 4.50, "2")
       @product3 = Product.new(:paper, "tissue paper", 1.25, "1")
+      @product4 = Product.new(:produce, "apples", 0.99, "20")
     end
 
     it("exisits") do
@@ -44,6 +45,41 @@ describe(Product) do
       @cart.add_product(@product2)
       @cart.add_product(@product3)
       expect(@cart.total_number_of_products).to(eq(13))
+    end
+
+    it("cart 30 items or less") do
+      expect(@cart.is_full?).to(eq(false))
+    end
+
+    it("cart is now full,over 30 items ") do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      @cart.add_product(@product4)
+      expect(@cart.is_full?).to(eq(true))
+    end
+
+    it("can sort by category") do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      @cart.add_product(@product4)
+      expect(@cart.products_by_category(:paper)).to(eq([@product1, @product3]))
+    end
+
+    it("can tell what percent is occupied") do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      expect(@cart.percent_occupied).to(eq(43.33))
+    end
+
+    it("can be sorted by quantity") do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      @cart.add_product(@product4)
+      expect(@cart.sorted_products_by_quantity).to(eq([@product4, @product1, @product2, @product3]))
     end
   end
 end
