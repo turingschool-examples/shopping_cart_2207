@@ -7,4 +7,15 @@ class ShoppingCart
     @capacity = capacity.delete('items').to_i
     @products = []
   end
+
+  def add_product(product)
+    @products << product
+  end
+
+  def details
+    {
+      name: @name,
+      capacity: @capacity
+    }
+  end
 end
