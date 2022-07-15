@@ -6,4 +6,18 @@ class ShoppingCart
     @capacity = capacity.to_i
     @products = []
   end
+
+  def add_product(product)
+    @products << product
+  end
+
+  def details
+    details = {name: @name, capacity: @capacity}
+  end
+
+  def total_number_of_products
+    require "pry"
+
+    binding.pry
+  end
 end
