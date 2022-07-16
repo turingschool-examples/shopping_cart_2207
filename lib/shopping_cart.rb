@@ -28,7 +28,7 @@ class ShoppingCart
   end
 
   def is_full?
-    @details[:capacity] <= total_number_of_products
+    @details[:capacity] < total_number_of_products
   end
 
   def products_by_category(category)
