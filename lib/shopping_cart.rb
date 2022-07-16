@@ -21,10 +21,7 @@ class ShoppingCart
     @products.count do |product|
       array << product.quantity
     end
-    array.each do |num|
-    counter += num
-    end
-    counter.to_i
+    array.sum
   end
 
   def is_full?
