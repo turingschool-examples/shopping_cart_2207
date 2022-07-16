@@ -18,7 +18,7 @@ class ShoppingCart
   def total_number_of_products
     array = []
     counter = 0
-    @products.count do |product|
+    @products.each do |product|
       array << product.quantity
     end
     array.sum
