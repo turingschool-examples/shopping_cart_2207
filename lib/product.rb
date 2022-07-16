@@ -7,10 +7,19 @@ class Product
     @unit_price = unit_price
     @quantity = quantity.to_i
     @total_price = 0
+    @is_hoarded = false
   end
 
   def total_price
     @total_price = @unit_price * @quantity
+  end
+
+  def is_hoarded?
+    @is_hoarded
+  end
+
+  def hoard
+    @is_hoarded = true
   end
 
 end
