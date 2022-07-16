@@ -115,7 +115,7 @@ describe ShoppingCart do
       cart.add_product(product4)
 
 
-      expect(cart.product_breakdown.keys).to eq([:meat, :paper, :produce])
+      expect(cart.product_breakdown.keys).to eq([:paper, :meat, :produce])
     end
 
 
