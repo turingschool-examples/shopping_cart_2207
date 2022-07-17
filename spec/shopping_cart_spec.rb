@@ -1,5 +1,5 @@
 require 'rspec'
-require './lib/shoppin_cart'
+require './lib/shopping_cart'
 
 describe ShoppingCart do
   context 'Iteration 2' do
