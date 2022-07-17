@@ -28,11 +28,11 @@ RSpec.describe ShoppingCart do
         it 'can add products' do
             @cart.add_product(@product1)
             @cart.add_product(@product2)
-            expect(cart.prducts.count).to eq(2)
+            expect(@cart.products.count).to eq(2)
         end
 
         it 'can return the cart details for name and capacity' do
-            expect(cart.details).to eq({name: "King Soopers", capacity: 30})
+            expect(@cart.details).to eq({name: "King Soopers", capacity: 30})
         end
     end
 end
