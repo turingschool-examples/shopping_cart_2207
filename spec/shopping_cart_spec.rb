@@ -82,11 +82,12 @@ RSpec.describe ShoppingCart do
         end
 
         it 'can return the products sorted by quantity' do
-            expect(@cart.sorted_products_by_quanitity[0]).to eq()
+            @cart.add_product(@product4)
+            expect(@cart.sorted_products_by_quantity.first.quantity).to eq(20)
         end
 
         it 'can return the product breakdown by category' do
-            expect(@cart.product_breakdown).to eq()
+            expect(@cart.product_breakdown).to be_a(Hash)
         end
     end
 end
