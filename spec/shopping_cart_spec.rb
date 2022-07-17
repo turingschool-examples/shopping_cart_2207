@@ -46,7 +46,7 @@ RSpec.describe do
     expect(@cart.total_number_of_products).to eq(13)
   end
 
-  xit 'has a method to check if the cart is full' do
+  it 'has a method to check if the cart is full' do
     @cart.add_product(@product1)
     @cart.add_product(@product2)
     @cart.add_product(@product3)
@@ -58,11 +58,11 @@ RSpec.describe do
     expect(@cart.is_full?).to be true
   end
 
-  xit 'can filter products by category' do
+  it 'can filter products by category' do
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    @cart.add_product(@product4)
     expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
   end
-
-
-
-
 end

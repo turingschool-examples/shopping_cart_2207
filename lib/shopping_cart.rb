@@ -16,4 +16,21 @@ class ShoppingCart
   def details
     {name: @name, capacity: @capacity}
   end
+
+  def total_number_of_products
+    count = 0
+    @products.each do |product|
+      count += product.quantity
+    end
+    count
+  end
+
+  def is_full?
+    return true if total_number_of_products > @capacity
+    false
+  end
+
+  def products_by_category(cat)
+    @products.select{|product| product.category == cat}
+  end
 end
