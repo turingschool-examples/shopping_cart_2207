@@ -65,4 +65,29 @@ RSpec.describe ShoppingCart do
             expect(@cart.products_by_category(:paper).count).to eq(2)
         end
     end
+    context 'Iteration 4' do
+        before :each do
+            @cart = ShoppingCart.new("King Soopers", "30items")
+            @product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+            @product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+            @product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+            @product4 = Product.new(:produce, 'apples', 0.99, '20')
+            @cart.add_product(@product1)
+            @cart.add_product(@product2)
+            @cart.add_product(@product3)
+        end
+
+        it 'can return the percentage occupied' do
+            expect(@cart.percentage_occupied).to eq(43.33)
+        end
+
+        it 'can return the products sorted by quantity' do
+            @cart.add_product(@product4)
+            expect(@cart.sorted_products_by_quantity.first.quantity).to eq(20)
+        end
+
+        it 'can return the product breakdown by category' do
+            expect(@cart.product_breakdown).to be_a(Hash)
+        end
+    end
 end
