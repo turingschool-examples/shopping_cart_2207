@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/shopping_cart'
+require './lib/product'
 
 describe ShoppingCart do
   context 'Iteration 2' do
@@ -25,6 +26,22 @@ describe ShoppingCart do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.products).to eq([])
+    end
+
+    it 'can add products' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product2 = Product.new(:meat, 'chicken', 4.50, '2')
+
+      cart.add_product(product1)
+      cart.add_product(product2)
+      expect(cart.products).to eq(product1, product2)
+    end
+
+    it 'can show the details of the cart' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+
+      expect(cart.details).to eq({name: "King Soopers", capacity: 30})
     end
   end
 end
