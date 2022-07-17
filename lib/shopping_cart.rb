@@ -45,6 +45,10 @@ class ShoppingCart
   end
 
   def product_breakdown
-
+    product_details = Hash.new{|hash, category| hash[category] = []}
+    @products.each do |product|
+      product_details[product.category] << product
+    end
+    product_details
   end
 end

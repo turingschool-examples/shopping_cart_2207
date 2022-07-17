@@ -47,6 +47,9 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       expect(cart.total_number_of_products).to eq(13)
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product4)
+      expect(cart.total_number_of_products).to eq(33)
     end
 
     it 'can check if cart is full' do
@@ -74,6 +77,7 @@ describe ShoppingCart do
       cart.add_product(product3)
       cart.add_product(product4)
       expect(cart.products_by_category(:paper)).to eq([product1,product3])
+      expect(cart.products_by_category(:produce)).to eq([product4])
     end
   end
 
@@ -88,6 +92,9 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       expect(cart.percentage_occupied).to eq(43.33)
+      product5 = Product.new(:paper, 'paper towel', 1.25, '6')
+      cart.add_product(product5)
+      expect(cart.percentage_occupied).to eq(63.33)
     end
 
     it 'can sort products by quantity' do
@@ -103,7 +110,7 @@ describe ShoppingCart do
       expect(cart.sorted_products_by_quantity).to eq([product4,product1,product2,product3])
     end
 
-    xit 'can show a product breakdown of the cart' do
+    it 'can show a product breakdown of the cart' do
       cart = ShoppingCart.new("King Soopers", "30items")
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
@@ -113,7 +120,7 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       cart.add_product(product4)
-      expect(cart.product_breakdown).to eq()
+      expect(cart.product_breakdown).to eq({:meat=>[product2], :paper=> [product1, product3], :produce=> [product4]})
     end
 
   end
