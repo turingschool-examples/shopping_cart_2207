@@ -29,7 +29,7 @@ describe ShoppingCart do
     it 'can add Products to Cart' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
-      expect(@cart.products).to eq([@product1], [@product2])
+      expect(@cart.products).to eq([@product1, @product2])
     end
 
     it 'has details' do

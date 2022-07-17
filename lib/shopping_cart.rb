@@ -10,9 +10,11 @@ class ShoppingCart
     @products = []
     @details = {
       name: store, 
-      capacity: @int_cap
+      capacity: @capacity
     }
   end
 
-
+  def add_product(product)
+    @products << product
+  end
 end
