@@ -33,4 +33,23 @@ class ShoppingCart
   def products_by_category(cat)
     @products.select{|product| product.category == cat}
   end
+
+  def percentage_occupied
+    (100 * total_number_of_products / @capacity.to_f).round(2)
+  end
+
+  def sorted_products_by_quantity
+    @products.sort_by{|product| -product.quantity}
+  end
+
+  def product_breakdown
+    #generate keys
+    breakdown = Hash.new{|hash, key| hash[key] = []}
+
+    keys = @products.map{|product| product.category}.uniq
+    @products.each do |product|
+      breakdown[product.category] << product
+    end
+    breakdown
+  end
 end

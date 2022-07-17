@@ -74,7 +74,7 @@ RSpec.describe do
     expect(@cart.percentage_occupied).to eq(43.33)
   end
 
-  xit 'can sort products by quantity' do
+  it 'can sort products by quantity' do
     @cart.add_product(@product1)
     @cart.add_product(@product2)
     @cart.add_product(@product3)
@@ -83,7 +83,12 @@ RSpec.describe do
     expect(@cart.sorted_products_by_quantity).to eq([@product4, @product1, @product2, @product3])
   end
 
-  xit 'can break products down by category' do
+  it 'can break products down by category' do
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    @cart.add_product(@product4)
+    
     expect(@cart.product_breakdown).to eq({:meat=>[@product2], :paper=>[@product1, @product3], :produce=>[@product4]})
   end
 
