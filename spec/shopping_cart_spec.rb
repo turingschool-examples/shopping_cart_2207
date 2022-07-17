@@ -7,17 +7,20 @@ describe ShoppingCart do
 
     it 'exists' do
       cart = ShoppingCart.new("King Soopers", "30items")
+
       expect(cart).to be_instance_of(ShoppingCart)
     end
 
     it 'has attributes' do
       cart = ShoppingCart.new("King Soopers", "30items")
+
       expect(cart.name).to eq("King Soopers")
       expect(cart.capacity).to eq("30items")
     end
 
     it 'defaults with no products in the cart at start' do
       cart = ShoppingCart.new("King Soopers", "30items")
+
       expect(cart.products).to eq([])
     end
 
@@ -27,11 +30,13 @@ describe ShoppingCart do
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
       cart.add_product(product1)
       cart.add_product(product2)
+
       expect(cart.products).to eq([product1,product2])
     end
 
     it 'can show the details of the cart' do
       cart = ShoppingCart.new("King Soopers", "30items")
+
       expect(cart.details).to eq({name: "King Soopers", capacity: 30})
     end
   end
@@ -46,9 +51,12 @@ describe ShoppingCart do
       cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
+
       expect(cart.total_number_of_products).to eq(13)
+
       product4 = Product.new(:produce, 'apples', 0.99, '20')
       cart.add_product(product4)
+
       expect(cart.total_number_of_products).to eq(33)
     end
 
@@ -60,9 +68,12 @@ describe ShoppingCart do
       cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
+
       expect(cart.is_full?).to be(false)
+
       product4 = Product.new(:produce, 'apples', 0.99, '20')
       cart.add_product(product4)
+
       expect(cart.is_full?).to be(true)
     end
 
@@ -76,6 +87,7 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       cart.add_product(product4)
+
       expect(cart.products_by_category(:paper)).to eq([product1,product3])
       expect(cart.products_by_category(:produce)).to eq([product4])
     end
@@ -91,9 +103,12 @@ describe ShoppingCart do
       cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
+
       expect(cart.percentage_occupied).to eq(43.33)
+
       product5 = Product.new(:paper, 'paper towel', 1.25, '6')
       cart.add_product(product5)
+
       expect(cart.percentage_occupied).to eq(63.33)
     end
 
@@ -107,6 +122,7 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       cart.add_product(product4)
+
       expect(cart.sorted_products_by_quantity).to eq([product4,product1,product2,product3])
     end
 
@@ -120,7 +136,12 @@ describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
       cart.add_product(product4)
+
       expect(cart.product_breakdown).to eq({:meat=>[product2], :paper=> [product1, product3], :produce=> [product4]})
+
+      product5 = Product.new(:paper, 'paper towel', 1.25, '6')
+      cart.add_product(product5)
+      expect(cart.product_breakdown).to eq({:meat=>[product2], :paper=> [product1, product3, product5], :produce=> [product4]})
     end
 
   end
