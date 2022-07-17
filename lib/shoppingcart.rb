@@ -34,4 +34,20 @@ class ShoppingCart
         end
         categorized
     end
+
+    def percentage_occupied
+        (total_number_of_products.to_f/@capacity * 100).truncate(2)
+    end
+
+    def sorted_products_by_quanity
+        @products.sort_by { |product| product.quantity }.reverse
+    end
+
+    def product_breakdown
+        breakdown = {}
+
+        @products.map{|product| breakdown.store(product.category, products_by_category(product.category))}
+    end
 end
+
+# finished 1 hours, 10 minutes.
