@@ -10,12 +10,24 @@ class ShoppingCart
   end
 
   def add_product(product)
-    products.find_all do |product|
-      @product << product
+      @products << product
     end
   end
 
-  def details
-    ({:name.keys, :capacity.keys})
+  def total_number_of_products
+    @products.map{|product| product.quantity}.sum
+  end
+
+  def is_full?
+    if total_number_of_products >= @capacity
+      true
+    else
+      false
+    end
+  end
+
+  def products_by_category(category)
+    products.find_all do |product|
+      products.category == category
   end
 end
