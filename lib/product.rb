@@ -6,11 +6,20 @@ class Product
     @name = name
     @unit_price = unit_price
     @quantity = quantity.to_i
+    @hoarded = false
   end
 
   def total_price
     total = 0.0
     quantity.times {total += @unit_price}
     return total
+  end
+
+  def is_hoarded?
+    @hoarded
+  end
+
+  def hoard
+    @hoarded = true
   end
 end
