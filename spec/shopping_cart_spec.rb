@@ -92,4 +92,5 @@ describe ShoppingCart do
       }
       expect(cart.product_breakdown).to eq(result)
     end
+  end
 end
