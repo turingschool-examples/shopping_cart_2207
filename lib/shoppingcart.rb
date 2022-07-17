@@ -47,7 +47,9 @@ class ShoppingCart
         breakdown = {}
 
         @products.map{|product| breakdown.store(product.category, products_by_category(product.category))}
+
+        breakdown
     end
 end
 
-# finished 1 hours, 10 minutes.
+# finished 1 hours, 14 minutes.
