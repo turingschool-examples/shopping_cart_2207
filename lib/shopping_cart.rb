@@ -13,6 +13,10 @@ class ShoppingCart
       @products << product
   end
 
+  def details
+    {name: @name, capacity: @capacity}
+  end
+
   def total_number_of_products
     @products.map{|product| product.quantity}.sum
   end
@@ -26,7 +30,7 @@ class ShoppingCart
   end
 
   def products_by_category(category)
-    products.find_all do |product|
+    products.select do |product|
       product.category == category
     end
   end
