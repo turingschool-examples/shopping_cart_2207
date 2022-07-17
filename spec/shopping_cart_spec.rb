@@ -77,11 +77,12 @@ describe ShoppingCart do
     end
     
     it 'can find % occupied' do
-      expect(cart.percentage_occupied).to eq(43.33)
+      expect(@cart.percentage_occupied).to eq(43.33)
     end
 
     it 'can sort products by quantity' do
-      expect(cart.products_sorted_by_quantity).to eq([@product4,@product1,@product2,@product3])
+      @cart.add_product(@product4)
+      expect(@cart.products_sorted_by_quantity).to eq([@product4, @product1, @product2, @product3])
     end
 
     it 'breaks down products by category' do
@@ -90,7 +91,8 @@ describe ShoppingCart do
         :paper => [@product1, @product3],
         :produce => [@product4]
       }
-      expect(cart.product_breakdown).to eq(result)
+      @cart.add_product(@product4)
+      expect(@cart.product_breakdown).to eq(result)
     end
   end
 end
