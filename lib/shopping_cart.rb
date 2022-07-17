@@ -43,10 +43,8 @@ class ShoppingCart
   end
 
   def product_breakdown
-    #generate keys
     breakdown = Hash.new{|hash, key| hash[key] = []}
 
-    keys = @products.map{|product| product.category}.uniq
     @products.each do |product|
       breakdown[product.category] << product
     end
