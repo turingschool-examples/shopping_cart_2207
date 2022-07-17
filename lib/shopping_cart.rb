@@ -11,7 +11,6 @@ class ShoppingCart
 
   def add_product(product)
       @products << product
-    end
   end
 
   def total_number_of_products
@@ -28,6 +27,7 @@ class ShoppingCart
 
   def products_by_category(category)
     products.find_all do |product|
-      products.category == category
+      product.category == category
+    end
   end
 end
