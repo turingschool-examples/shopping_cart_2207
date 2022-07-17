@@ -20,7 +20,9 @@ RSpec.describe ShoppingCart do
       expect(@cart.capacity).to eq("30items")
       expect(@cart.products).to eq([])
     end
+  end
 
+  context 'iteration 3' do
     it 'has add_product method' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
@@ -48,7 +50,9 @@ RSpec.describe ShoppingCart do
       @cart.add_product(@product4)
       expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
     end
+  end
 
+  context 'iteration 4' do
     it 'has percentage_occupied method' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
@@ -62,6 +66,14 @@ RSpec.describe ShoppingCart do
       @cart.add_product(@product3)
       @cart.add_product(@product4)
       expect(@cart.sorted_products_by_quantity).to eq([@product4, @product1, @product2, @product3])
+    end
+
+    it 'had product_breakdown method' do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      @cart.add_product(@product4)
+      expect(@cart.product_breakdown).to be_a(Hash)
     end
   end
 end

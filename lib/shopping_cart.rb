@@ -39,17 +39,12 @@ class ShoppingCart
   end
 
   def sorted_products_by_quantity
-    # I want this method to access the product
-    # quantities and sort them from largest to smallest
-    # create and array of product quantites and use .max method to sort
-    # array
+    @products.sort {|product, product1| product1.quantity.to_i <=> product.quantity.to_i}
+  end
 
-
-    @products.map do |product|
-      product.quantity.to_i
-    end
-
-
-
+  def product_breakdown
+    new_hash = Hash.new(0)
+    @products.each { |product| new_hash[product.category] = product }
+    new_hash
   end
 end

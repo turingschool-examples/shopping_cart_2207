@@ -39,6 +39,5 @@ describe Product do
       @product.hoard
       expect(@product.is_hoarded?).to eq(true)
     end
-
   end
 end
