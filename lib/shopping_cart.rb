@@ -16,7 +16,6 @@ class ShoppingCart
   end
 
   def details
-    arr = [:name, :capacity]
-    puts arr.to_h
+    ({:name.keys, :capacity.keys})
   end
 end
