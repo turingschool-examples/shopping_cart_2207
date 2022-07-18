@@ -48,5 +48,11 @@ class Cart
     (self.total_number_of_products / self.capacity.to_f * 100).round(2)
   end
 
+  def sorted_products_by_quantity
+    @products.map do |product|
+      product.quantity
+    end.sort
+  end
+
 
 end
