@@ -34,5 +34,35 @@ class ShoppingCart
     @products.find_all do |product|
       product.category == category
     end
-  end   
+  end
+
+  def percentage_occupied
+    percent = (total_number_of_products / @capacity[0..-5].to_f) *100
+    percent.round(2)
+  end
+
+  def sorted_products_by_quantity
+    @products.sort do |product|
+      product.quantity.to_i
+    end
+  end
+
+  def product_breakdown
+    product_hash = {
+      :meat => [],
+      :paper => [],
+      :produce => []
+
+    }
+    @products.each do |product|
+      if product.category == :meat
+        product_hash[:meat] << product
+      elsif product.category == :paper
+        product_hash[:paper] << product
+      elsif product.category == :produce
+        product_hash[:produce] << product
+      end
+    end
+    product_hash
+  end
 end
