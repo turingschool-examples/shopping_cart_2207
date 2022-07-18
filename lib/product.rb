@@ -1,9 +1,10 @@
 class Product
-  attr_reader :category
+  attr_reader :category,
+              :name
 
-  def initialize(category, thing_2, thing_3, thing_4)
-    @category = category 
-
+  def initialize(category, name, thing_3, thing_4)
+    @category = category
+    @name = name
 
   end
 
