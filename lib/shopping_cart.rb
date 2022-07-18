@@ -21,4 +21,12 @@ class Cart
     hash
   end
 
+  def total_number_of_products
+    product_count = 0
+    @products.each do |product|
+      product_count += product.quantity 
+    end
+    product_count
+  end
+
 end
