@@ -40,5 +40,15 @@ describe Product do
       expect(product1.total_price).to eq 37.0
       expect(product2.total_price).to eq 9.0
     end
+
+    it 'should check for hoarding' do
+      product = Product.new(:paper, 'toilet paper', 3.70, '10')
+
+      expect(product.is_hoarded?).to eq true
+      product.hoard
+# require 'pry';binding.pry
+      expect(product.is_hoarded?).to eq false
+    end#cannot get...return to it
+
   end
 end
