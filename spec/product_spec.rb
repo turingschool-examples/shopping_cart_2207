@@ -10,7 +10,7 @@ describe Product do
       expect(product).to be_an_instance_of Product
     end
 
-    xit 'Product has a category' do
+    it 'Product has a category' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.category).to eq :paper
