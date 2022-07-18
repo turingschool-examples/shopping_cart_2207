@@ -10,25 +10,25 @@ describe ShoppingCart do
       expect(cart).to be_an_instance_of(ShoppingCart)
     end
 
-    it 'has a name' do
+    xit 'has a name' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.name).to eq("King Soopers")
     end
 
-    it 'has a capacity' do
+    xit 'has a capacity' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.capacity).to eq(30)
     end
 
-    it 'has an array for products' do
+    xit 'has an array for products' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.products).to eq([])
     end
 
-    it 'can add products to itself' do
+    xit 'can add products to itself' do
       cart = ShoppingCart.new("King Soopers", "30items")
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
@@ -38,11 +38,10 @@ describe ShoppingCart do
       expect(cart.products).to eq([product1, product2])
     end
 
-    it 'can return details about itself' do
+    xit 'can return details about itself' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.details).to eq({name: "King Soopers", capacity: 30})
     end
-
   end
 end
