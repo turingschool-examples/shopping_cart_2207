@@ -3,6 +3,7 @@ class Cart
   attr_reader :name,
               :capacity,
               :products
+              
 
   def initialize(name, capacity)
     @name = name
@@ -28,5 +29,14 @@ class Cart
     end
     product_count
   end
+
+  def is_full?
+    if self.total_number_of_products >= self.capacity
+      true
+    else
+      false
+    end
+  end
+
 
 end
