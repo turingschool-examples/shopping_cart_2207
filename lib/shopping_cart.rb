@@ -13,7 +13,10 @@ class ShoppingCart
   end
 
   def details
-    Product.name. Product.quantity 
+    # { Product.name. Product.quantity }
   end
 
+  def total_number_of_products
+    @products.count
+  end
 end
