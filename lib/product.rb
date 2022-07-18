@@ -12,9 +12,5 @@ class Product
     def total_price
         total_price = @unit_price * @quantity
     end
-
-
-    
-
 end 
 
