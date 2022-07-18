@@ -21,7 +21,7 @@ RSpec.describe ShoppingCart do
     expect(@cart.products).to eq([])
   end
 
-  xit 'can count and return info for products in cart' do
+  it 'can count and return info for products in cart' do
     @cart.add_product(@product1)
     @cart.add_product(@product2)
 
