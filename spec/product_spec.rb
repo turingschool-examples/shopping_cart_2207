@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/product'
+require 'pry'
 
 describe Product do
   context 'Iteration 1' do
