@@ -27,4 +27,10 @@ class ShoppingCart
     curent_total
   end
 
+  def is_full?
+    cart_total = 0
+    @products.each { |item| cart_total += item.quantity }
+    cart_total >= @capacity
+  end
+
 end
