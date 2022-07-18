@@ -34,4 +34,8 @@ class ShoppingCart
     cart_total >= @capacity
   end
 
+  def products_by_category(categ)
+    products.select{ |item| item.category == categ }
+  end
+
 end
