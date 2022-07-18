@@ -14,4 +14,11 @@ class Cart
     @products << product
   end
 
+  def details
+    hash = Hash.new
+    hash[:name] = @name
+    hash[:capacity]= @capacity
+    hash
+  end
+
 end

@@ -27,7 +27,11 @@ RSpec.describe Cart do
     expect(cart.products.length).to eq(2)
   end
 
-
+  it 'can output cart details as a hash' do
+    cart = Cart.new("King Soopers", "30items")
+    
+    expect(cart.details).to eq({name: "King Soopers", capacity: 30})
+  end
 
 
 
