@@ -38,15 +38,22 @@ RSpec.describe ShoppingCart do
 
     expect(@cart.total_number_of_products).to eq(13)
   end
-    #
-    # expect(@cart.is_full?).to eq(false)
-    #
-    # product4 = Product.new(:produce, 'apples', 0.99, '20')
-    #
-    # @cart.add_product(@product4)
-    #
-    # expect(@cart.is_full?).to eq(true)
-    #
-    # expect(cart.products_by_category(:paper).count).to eq(2)
+
+  it 'can tell if cart is full' do
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+
+    expect(@cart.is_full?).to eq(false)
+  end
+
+  # it '' do
+  #   product4 = Product.new(:produce, 'apples', 0.99, '20')
+  #
+  #   @cart.add_product(@product4)
+  #
+  #   expect(@cart.is_full?).to eq(true)
+  #
+  #   expect(cart.products_by_category(:paper).count).to eq(2)
 
 end
