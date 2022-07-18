@@ -13,7 +13,7 @@ RSpec.describe ShoppingCart do
     expect(@cart.name).to eq('King Soopers')
   end
 
-  xit 'can return cart capacity' do
+  it 'can return cart capacity' do
     expect(@cart.capacity).to eq(30)
   end
 

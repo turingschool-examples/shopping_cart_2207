@@ -1,10 +1,12 @@
 require './lib/product'
 
 class ShoppingCart
-  attr_reader :name
+  attr_reader :name,
+              :capacity
 
-  def initialize(name, thing_2)
+  def initialize(name, capacity)
     @name = name
+    @capacity = capacity.delete("items").to_i
 
   end
 
