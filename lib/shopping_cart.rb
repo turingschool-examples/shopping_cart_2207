@@ -35,4 +35,24 @@ def products_by_category(category)
   end
 end
 
+def percentage_occupied
+  ((total_number_of_products.to_f / @capacity) * 100).round(2)
+end
+
+def sorted_products_by_quantity
+  starting_products = []
+  @products.each {|product| starting_products << product}
+  products = []
+  loop do
+    product = starting_products.max{|a, b| a.quantity <=> b.quantity}
+    products << product
+    starting_products.delete(product)
+    if products.count == @products.count
+      break
+    end
+  end
+  products
+end
+
+
 end
