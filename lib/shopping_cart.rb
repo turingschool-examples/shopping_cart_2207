@@ -54,5 +54,14 @@ class Cart
     end.sort
   end
 
+  def product_breakdown
+    category_hash = Hash.new
+    @products.each do |product|
+      category_hash[product.category] = product
+    end
+    category_hash
+  end
+
 
 end
+

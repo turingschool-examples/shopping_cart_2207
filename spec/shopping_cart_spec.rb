@@ -101,6 +101,21 @@ RSpec.describe Cart do
     expect(cart.sorted_products_by_quantity).to eq([1, 2, 10, 20])
   end
 
+  it 'can create a hash of products by category' do
+    cart = Cart.new("King Soopers", "30items")
+    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+    product2 = Product.new(:meat, 'chicken', 4.50, '2')
+    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+    product4 = Product.new(:produce, 'apples', 0.99, '20')
+    cart.add_product(product1)
+    cart.add_product(product2)
+    cart.add_product(product3)
+    cart.add_product(product4)
+   
+    expect(cart.product_breakdown.count).to eq(3)
+  end
+
+
 
 
 end
