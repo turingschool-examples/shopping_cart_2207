@@ -3,14 +3,16 @@ class Product
     def initialize(category, name, price, quantity)
         @category = category
         @name = name
-        @unit_price = price.to_f
+        @unit_price = price
         @quantity = quantity.to_f
         @hoarded = false
     end
 
+
     def total_price
         @quantity * @unit_price
     end
+
 
     def hoarded?
         @hoarded
