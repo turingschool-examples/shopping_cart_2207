@@ -40,4 +40,15 @@ class ShoppingCart
     end
     category_of_products[category]
   end
-end
+
+  def percentage_occupied
+    (total_number_of_products.to_f / capacity).truncate(4) * 100
+  end
+
+  def sorted_products_by_quantity
+    by_quantity = products.sort_by do |product|
+      product.quantity
+    end
+    by_quantity.reverse
+  end
+end 
