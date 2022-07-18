@@ -50,6 +50,15 @@ describe ShoppingCart do
         expect(cart.total_number_of_products).to eq(13)
     end
 
+    it 'cart is not full until its over capacity' do
+        cart = ShoppingCart.new("King Soopers", "30items")
+        product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+        product2 = Product.new(:meat, 'chicken', 4.50, '2')
+        product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+
+        expect(cart.is_full?).to eq(false)
+    end
+
     it 'can check if cart is full' do
         cart = ShoppingCart.new("King Soopers", "30items")
         product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
@@ -78,4 +87,15 @@ describe ShoppingCart do
         expect(cart.products_by_category(:paper)).to eq([product1, product3])
     end
 
+    it 'can calculate percentage of cart that is full' do
+        cart = ShoppingCart.new("King Soopers", "30items")
+        product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+        product2 = Product.new(:meat, 'chicken', 4.50, '2')
+        product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+        cart.add_product(product1)
+        cart.add_product(product2)
+        cart.add_product(product3)
+
+        expect(cart.percentage_occupied).to eq(43.33)
+    end
 end

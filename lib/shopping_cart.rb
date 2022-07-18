@@ -34,5 +34,14 @@ attr_reader :name, :capacity, :products, :details
 end
 end
 
+def percentage_occupied
+# require "pry"; binding.pry
+    product_quantities = []
+    @products.each do |product|
+        product_quantities << product.quantity
+    end
+((product_quantities.sum / capacity.to_f) * 100).round(2)
+end
+
 
 end
