@@ -28,7 +28,7 @@ describe Product do
       expect(product.unit_price).to eq 3.70
     end
 
-    xit 'Product has a quantity' do
+    it 'Product has a quantity' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.quantity).to eq 10
