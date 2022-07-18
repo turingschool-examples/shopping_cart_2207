@@ -8,7 +8,7 @@ class ShoppingCart
     @products = []
   end
 
-  def add_products(products)
+  def add_products(product)
     @products << product
   end
 
