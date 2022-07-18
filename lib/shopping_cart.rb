@@ -21,4 +21,10 @@ class ShoppingCart
     end
   end
 
+  def total_number_of_products
+    curent_total = 0
+    @products.each { |item| curent_total += item.quantity }
+    curent_total
+  end
+
 end
