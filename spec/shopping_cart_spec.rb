@@ -10,13 +10,13 @@ describe ShoppingCart do
       expect(cart).to be_an_instance_of(ShoppingCart)
     end
 
-    xit 'has a name' do
+    it 'has a name' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.name).to eq("King Soopers")
     end
 
-    xit 'has a capacity' do
+    it 'has a capacity' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.capacity).to eq(30)
