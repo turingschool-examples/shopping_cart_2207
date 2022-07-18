@@ -62,7 +62,7 @@ describe ShoppingCart do
       expect(@cart.total_number_of_products).to eq(13)
     end
 
-    it 'can check whether it is full' do
+    xit 'can check whether it is full' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
       @cart.add_product(@product3)
@@ -74,7 +74,7 @@ describe ShoppingCart do
       expect(@cart.is_full?).to eq(true)
     end
 
-    it 'can return products_by_category' do
+    xit 'can return products_by_category' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
       @cart.add_product(@product3)
