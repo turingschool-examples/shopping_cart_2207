@@ -44,5 +44,9 @@ class Cart
     end
   end
 
+  def percentage_occupied
+    (self.total_number_of_products / self.capacity.to_f * 100).round(2)
+  end
+
 
 end
