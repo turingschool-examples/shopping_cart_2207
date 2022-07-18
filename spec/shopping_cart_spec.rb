@@ -64,4 +64,16 @@ RSpec.describe ShoppingCart do
 
     expect(@cart.products_by_category(:paper).count).to eq(2)
   end
+
+  it 'can return percent occupied' do
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+
+    (@cart.percentage_occupied).to eq(43.33)
+  end
+
+# @cart.add_product(@product4)
+# @cart.sorted_products_by_quantity
+# @cart.product_breakdown
 end
