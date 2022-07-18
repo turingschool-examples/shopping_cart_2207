@@ -14,11 +14,12 @@ class ShoppingCart
   end
 
   def add_product(product)
-    total = 0
-    @products.each { |item| total += item.quantity }
-    if total + product.quantity <= capacity
-      @products << product
-    end
+    # total = 0
+    # @products.each { |item| total += item.quantity }
+    # if total + product.quantity <= capacity
+    #   @products << product
+    @products << product
+    # end
   end
 
   def total_number_of_products
