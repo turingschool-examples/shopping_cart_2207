@@ -17,7 +17,7 @@ RSpec.describe ShoppingCart do
     expect(@cart.capacity).to eq(30)
   end
 
-  xit 'can return products in cart' do
+  it 'can return products in cart' do
     expect(@cart.products).to eq([])
   end
 
