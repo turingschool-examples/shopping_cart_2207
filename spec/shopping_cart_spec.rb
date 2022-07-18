@@ -74,7 +74,7 @@ describe ShoppingCart do
       expect(@cart.is_full?).to eq(true)
     end
 
-    xit 'can return products_by_category' do
+    it 'can return products_by_category' do
       @cart.add_product(@product1)
       @cart.add_product(@product2)
       @cart.add_product(@product3)
