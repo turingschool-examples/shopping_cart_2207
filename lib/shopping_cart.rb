@@ -7,8 +7,8 @@ attr_reader :name, :capacity, :products, :details
         @capacity = capacity.to_i
         @products = []
         @details = {
-                name: @name,
-                capacity: @capacity
+                    name: @name,
+                    capacity: @capacity
                     }
     end
 
@@ -29,19 +29,30 @@ attr_reader :name, :capacity, :products, :details
     end
 
     def products_by_category(category)
-@products.find_all do |item|
-    item.category == category
-end
-end
-
-def percentage_occupied
-# require "pry"; binding.pry
-    product_quantities = []
-    @products.each do |product|
-        product_quantities << product.quantity
+        @products.find_all do |item|
+        item.category == category
+        end
     end
-((product_quantities.sum / capacity.to_f) * 100).round(2)
-end
 
+    def percentage_occupied
+        product_quantities = []
+        @products.each do |product|
+            product_quantities << product.quantity
+        end
+        ((product_quantities.sum / capacity.to_f) * 100).round(2)
+    end
+
+    def sorted_products_by_quantity
+        @products.sort_by {|product| product.quantity}.reverse
+    end
+
+    def product_breakdown
+        breakdown = {
+            meat: products_by_category(:meat),
+            paper: products_by_category(:paper),
+            produce: products_by_category(:produce)
+            }
+        breakdown
+    end
 
 end
