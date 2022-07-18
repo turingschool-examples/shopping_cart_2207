@@ -25,4 +25,18 @@ class ShoppingCart
         @products.select { |product| product.category == category }
     end
 
+    def percentage_occupied
+        (100 * total_number_of_products / capacity.to_f).round(2)
+    end
+
+    def sorted_products_by_quantity
+        @products.sort_by { |product| product.quantity }.reverse
+    end
+
+    def product_breakdown
+        breakdown = Hash.new([])
+        # I'm pretty stuck on how to test this one, and how to formulate the code for it
+        breakdown
+    end
+
 end
