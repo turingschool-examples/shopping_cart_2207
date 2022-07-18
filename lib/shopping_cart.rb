@@ -17,16 +17,27 @@ class ShoppingCart
     end 
 
     def total_number_of_products
-        @products.to_i
+        count = 0
+        @products.each do |product|
+            count += product.quantity
+        end
+        count
     end
 
     def is_full?
-        @capacity >= total_number_of_products
+        @capacity < total_number_of_products
     end
 
+    def products_by_category(category)
+        @products.each do |type|
+            @product.category == category
+        end
+        category
+    end
+         
 
 
 
 
-    
+
 end
