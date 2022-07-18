@@ -25,5 +25,19 @@ class ShoppingCart
         @products.find_all { |product| product.category == category }
     end
 
+    def percentage_occupied
+        (100*@quantity_of_products/@capacity).round(2)
+    end
+
+    def sorted_products_by_quantity
+        products.sort_by {|product| product.quantity}
+    end
+
+    # def product_breakdown
+    #    products.map do |product|
+    #      {product.category => product }
+    #    end
+    #  dude idk
+    # end
 end
 

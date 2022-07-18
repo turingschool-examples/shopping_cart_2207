@@ -50,6 +50,28 @@ describe ShoppingCart do
             expect(cart.products_by_category(:paper)).to eq [product1, product3]
         end
     end
+
+    context 'Iteration 4' do
+        before :each do
+            cart.add_product(product1)
+            cart.add_product(product2)
+            cart.add_product(product3)
+        end
+
+        it 'can return how full the it is as a percentage' do
+            expect(cart.percentage_occupied).to eq 43.33
+        end
+
+        it 'can return an array of products sorted by quantity' do
+            cart.add_product(product4)
+            expect(cart.sorted_products_by_quantity).to eq [product3, product2, product1, product4]
+        end
+
+        xit 'can return a hash of the products sorted by category' do
+            expect(cart.product_breakdown).to eq {}
+        end
+    end
+
 end
 
 
