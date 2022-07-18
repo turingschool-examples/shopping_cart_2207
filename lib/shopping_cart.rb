@@ -38,4 +38,20 @@ class ShoppingCart
     products.select{ |item| item.category == categ }
   end
 
+  def percentage_occupied
+    total = 0
+    @products.each { |item| total += item.quantity }
+    # require "pry"; binding.pry
+    ((total / @capacity.to_f) * 100)
+
+  end
+
+  def sorted_products_by_quantity
+
+  end
+
+  def product_breakdown
+    
+  end
+
 end
