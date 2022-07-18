@@ -56,6 +56,12 @@ RSpec.describe ShoppingCart do
     expect(@cart.is_full?).to eq(true)
   end
 
-    # expect(@cart.products_by_category(:paper).count).to eq(2)
+  it 'can return products by category' do
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    @cart.add_product(@product4)
 
+    expect(@cart.products_by_category(:paper).count).to eq(2)
+  end
 end
