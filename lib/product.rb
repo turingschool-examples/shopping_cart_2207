@@ -1,3 +1,4 @@
+#Sergio_Azcona
 class Product 
   attr_reader :category, :name, :unit_price, :quantity, :hoard
   def initialize(category, name, unit_price, quantity)
